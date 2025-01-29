@@ -25,3 +25,7 @@ npm run dev
 
 1. While on `http://localhost:3000/` within your browser, click the "Sign in" button in the top right corner and sign in.
 2. In the dropdown menu in the top right menu, select "Add sample restaurants".
+
+`npm run build-service-worker`
+
+`firebase apphosting:secrets:set SECRETNAME`
