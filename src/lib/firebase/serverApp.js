@@ -21,17 +21,12 @@ if (getApps().length === 0) {
 
 export async function getAuthenticatedAppForUser() {
     const idToken = headers().get("Authorization")?.split("Bearer ")[1];
-    const firebaseServerApp = initializeServerApp(
-        firebaseConfig,
-        idToken
-            ? {
-                authIdToken: idToken,
-            }
-            : {}
-    );
+    const firebaseServerApp = initializeServerApp(firebaseConfig, {
+      idToken,
+    });
 
   const auth = getAuth(firebaseServerApp);
   await auth.authStateReady();
 
-  return { app: firebaseApp, firebaseServerApp, currentUser: auth.currentUser };
+  return { firebaseApp, firebaseServerApp, currentUser: auth.currentUser };
 }
