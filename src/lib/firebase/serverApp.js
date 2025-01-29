@@ -3,25 +3,35 @@
 import "server-only";
 
 import { headers } from "next/headers";
+import { initializeApp, getApps, FirebaseApp } from "firebase/app";
 import { initializeServerApp } from "firebase/app";
+
 
 import { firebaseConfig } from "./config";
 import { getAuth } from "firebase/auth";
 
+let firebaseApp;
+if (getApps().length === 0) {
+    console.log("Initializing Firebase app in serverApp.js");
+    firebaseApp = initializeApp(firebaseConfig);
+} else {
+    console.log("Using existing Firebase app in serverApp.js");
+    firebaseApp = getApps()[0];
+}
+
 export async function getAuthenticatedAppForUser() {
-  const idToken = headers().get("Authorization")?.split("Bearer ")[1];
-  console.log('firebaseConfig', JSON.stringify(firebaseConfig));
-  const firebaseServerApp = initializeServerApp(
-    firebaseConfig,
-    idToken
-      ? {
-          authIdToken: idToken,
-        }
-      : {}
-  );
+    const idToken = headers().get("Authorization")?.split("Bearer ")[1];
+    const firebaseServerApp = initializeServerApp(
+        firebaseConfig,
+        idToken
+            ? {
+                authIdToken: idToken,
+            }
+            : {}
+    );
 
   const auth = getAuth(firebaseServerApp);
   await auth.authStateReady();
 
-  return { firebaseServerApp, currentUser: auth.currentUser };
+  return { app: firebaseApp, firebaseServerApp, currentUser: auth.currentUser };
 }
