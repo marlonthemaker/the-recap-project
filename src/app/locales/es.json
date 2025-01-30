@@ -1,0 +1,9 @@
+{
+  "greeting": "¡Hola, Mundo!",
+  "login": "Iniciar Sesión",
+  "logout": "Cerrar Sesión",
+  "welcome": "Bienvenido a nuestra aplicación",
+  "dynamicWelcome": "Bienvenido a la página dinámica",
+  "staticWelcome": "Bienvenido a la página estática",
+  "serverActionWelcome": "Bienvenido a la página de acción del servidor"
+}
