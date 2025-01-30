@@ -93,7 +93,7 @@ export default function RestaurantListings({
 		<article>
 			<Filters filters={filters} setFilters={setFilters} />
       <div>
-        <h1>
+        <h1 className="text-3xl font-bold underline">
           {greeting}
         </h1>
       </div>
