@@ -3,7 +3,9 @@
 // This components handles the restaurant listings page
 // It receives data from src/app/page.jsx, such as the initial restaurants and search params from the URL
 
-import Link from "next/link";
+// import Link from "next/link";
+import {Link} from '@/src/i18n/routing';
+
 import { React, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import renderStars from "@/src/components/Stars.jsx";
@@ -58,8 +60,9 @@ const RestaurantMetadata = ({ restaurant }) => (
 export default function RestaurantListings({
 	initialRestaurants,
 	searchParams,
+  greeting
 }) {
-	const router = useRouter();
+  const router = useRouter();
 
 	// The initial filters are the search params from the URL, useful for when the user refreshes the page
 	const initialFilters = {
@@ -89,6 +92,11 @@ export default function RestaurantListings({
 	return (
 		<article>
 			<Filters filters={filters} setFilters={setFilters} />
+      <div>
+        <h1>
+          {greeting}
+        </h1>
+      </div>
 			<ul className="restaurants">
 				{restaurants.map(restaurant => (
 					<RestaurantItem

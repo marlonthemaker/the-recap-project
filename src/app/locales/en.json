@@ -1,9 +1,0 @@
-{
-  "greeting": "Hello, World!",
-  "login": "Log In",
-  "logout": "Log Out",
-  "welcome": "Welcome to our App",
-  "dynamicWelcome": "Welcome to the dynamic page",
-  "staticWelcome": "Welcome to the static page",
-  "serverActionWelcome": "Welcome to the server action page"
-}

@@ -2,7 +2,7 @@ import RestaurantListings from "@/src/components/RestaurantListings.jsx";
 import { getRestaurants } from "@/src/lib/firebase/firestore.js";
 import { getAuthenticatedAppForUser } from "@/src/lib/firebase/serverApp.js";
 import { getFirestore } from "firebase/firestore";
-
+import {getTranslations} from 'next-intl/server';
 // Force next.js to treat this route as server-side rendered
 // Without this line, during the build process, next.js will treat this route as static and build a static HTML file for it
 
@@ -16,11 +16,14 @@ export default async function Home({ searchParams }) {
 	// ?city=London&category=Indian&sort=Review
 	const {firebaseServerApp} = await getAuthenticatedAppForUser();
 	const restaurants = await getRestaurants(getFirestore(firebaseServerApp), searchParams);
+  const t = await getTranslations('HomePage');
 	return (
 		<main className="main__home">
 			<RestaurantListings
 				initialRestaurants={restaurants}
 				searchParams={searchParams}
+        greeting={t('title')}
+
 			/>
 		</main>
 	);

@@ -1,9 +1,0 @@
-{
-  "greeting": "こんにちは、世界！",
-  "login": "ログイン",
-  "logout": "ログアウト",
-  "welcome": "アプリへようこそ",
-  "dynamicWelcome": "ダイナミックページへようこそ",
-  "staticWelcome": "静的ページへようこそ",
-    "serverActionWelcome": "サーバーアクションページへようこそ"
-}
