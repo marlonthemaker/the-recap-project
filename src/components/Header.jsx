@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
+// import Link from "next/link";
+import {Link} from '@/src/i18n/routing';
 import {
 	signInWithGoogle,
 	signOut,
@@ -84,6 +85,14 @@ export default function Header({initialUser}) {
 							...
 							<ul>
 								<li>{user.displayName}</li>
+
+								<li>
+									<Link
+										href={`/dashboard`}
+									>
+										Home Page
+									</Link>
+								</li>
 
 								<li>
 									<a
