@@ -95,12 +95,19 @@ export default function Header({initialUser}) {
 								</li>
 
 								<li>
-									<a
-										href="#"
-										onClick={addFakeRestaurantsAndReviews}
+									<Link
+										href={`/recaps`}
 									>
-										Add sample restaurants
-									</a>
+										All Recaps
+									</Link>
+								</li>
+
+								<li>
+									<Link
+										href={`/recap/10-06-2024/admin`}
+									>
+										Example Recap
+									</Link>
 								</li>
 
 								<li>
