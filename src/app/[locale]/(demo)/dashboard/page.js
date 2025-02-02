@@ -6,13 +6,13 @@ import PageHeader from '@/src/components/base/navigation/PageHeader';
 import BlurBackground from "@/src/components/base/utils/BlurBackground";
 import {useTranslations} from 'next-intl';
 
-export default function HomePage() {
+export default function DashboardPage() {
 const t = useTranslations('HomePage');
 
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-      <RecapHeader/>
+      <RecapHeader recapId={"- dashboard"} />
       <RecapReport/>
       <RecapPlayers/>
       </div>
