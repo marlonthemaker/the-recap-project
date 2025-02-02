@@ -3,10 +3,10 @@ import Navigation from '@/src/components/base/navigation/Navigation';
 import { getAuthenticatedAppForUser } from "@/src/lib/firebase/serverApp";
 
 const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+    { name: 'Recaps', href: '/recaps' },
+    { name: 'Recap', href: '/recap/1234' },
+    { name: 'AdminRe', href: '/recap/1234/admin' },
+    { name: 'Dashboard', href: '/dashboard' },
   ];
 
 export const metadata = {

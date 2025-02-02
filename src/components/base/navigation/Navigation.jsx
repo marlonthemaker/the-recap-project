@@ -1,3 +1,4 @@
+import {Link} from '@/src/i18n/routing';
 import MobileNavigation from '@/src/components/base/navigation/MobileNavigation';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 
@@ -23,9 +24,9 @@ function Navigation({navigation}) {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
                     {navigation.map((item) => (
-                        <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
+                        <Link key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
                             {item.name}
-                        </a>
+                        </Link>
                     ))}
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
