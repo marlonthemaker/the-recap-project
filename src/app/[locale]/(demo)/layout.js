@@ -7,6 +7,7 @@ const navigation = [
     { name: 'Recap', href: '/recap/1234' },
     { name: 'AdminRe', href: '/recap/1234/admin' },
     { name: 'Dashboard', href: '/dashboard' },
+    { name: 'Settings', href: '/settings' },
   ];
 
 export const metadata = {
