@@ -1,4 +1,4 @@
-export default function Example() {
+export default function TeamHeader() {
   return (
     <div className="flex">
       <div className="shrink-0 self-center">

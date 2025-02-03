@@ -4,6 +4,7 @@ import RecapPlayers from '@/src/components/base/recap/RecapPlayers';
 import RecapHeader from '@/src/components/base/heros/RecapHeader';
 import PageHeader from '@/src/components/base/navigation/PageHeader';
 import BlurBackground from "@/src/components/base/utils/BlurBackground";
+import SmartSummary from "@/src/components/base/recap/SmartSummary";
 import {useTranslations} from 'next-intl';
 
 export default function DashboardPage() {
@@ -15,6 +16,7 @@ const t = useTranslations('HomePage');
       <RecapHeader recapId={"- dashboard"} />
       <RecapReport/>
       <RecapPlayers/>
+      <SmartSummary/>
       </div>
     </div>
   );

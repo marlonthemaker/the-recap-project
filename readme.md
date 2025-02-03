@@ -29,3 +29,7 @@ npm run dev
 `npm run build-service-worker`
 
 `firebase apphosting:secrets:set SECRETNAME`
+
+`NODE_OPTIONS='--inspect' npm run dev`
+
+`chrome://inspect/#devices`

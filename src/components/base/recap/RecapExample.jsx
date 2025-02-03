@@ -20,13 +20,16 @@ const posts = [
   // More posts...
 ]
 
-export default function RecapExample() {
+export default async function RecapExample({
+  recapData,
+  locale
+}) {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">From the blog</h2>
-          <p className="mt-2 text-lg/8 text-gray-600">Learn how to grow your business with our expert advice.</p>
+          <p className="mt-2 text-lg/8 text-gray-600">{recapData[locale] || "...loading..."}</p>
           <div className="mt-10 space-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16">
             {posts.map((post) => (
               <article key={post.id} className="flex max-w-xl flex-col items-start justify-between">
