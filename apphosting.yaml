@@ -14,3 +14,5 @@ env:
     value: 1:745216428727:web:1ab1772a8f4fc5b7e09b32
   - variable: GEMINI_API_KEY
     secret: gemini-api-key
+  - variable: NEXT_PUBLIC_FIREBASE_URL
+    value: https://the-recap-project-backend--the-recap-project.us-central1.hosted.app

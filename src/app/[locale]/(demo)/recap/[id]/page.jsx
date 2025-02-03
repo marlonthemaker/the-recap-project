@@ -2,10 +2,11 @@ import RecapExample from '@/src/components/base/recap/RecapExample';
 import {getLocale} from 'next-intl/server';
 
 async function fetchSummarizedData(gameId) {
-  const apiUrl = process.env.NEXT_PUBLIC_VERCEL_URL
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/summarize`
+  const apiUrl = process.env.NEXT_PUBLIC_FIREBASE_URL
+      ? `${process.env.NEXT_PUBLIC_FIREBASE_URL}/api/summarize`
       : "http://localhost:3000/api/summarize"; // Fallback for local
-  const response = await fetch(apiUrl, {
+      console.log('apiUrl', apiUrl)
+      const response = await fetch(apiUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

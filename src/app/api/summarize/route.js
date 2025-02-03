@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import 'server-only';
-import { formatBoxScoreForGemini } from '@/src/app/api/helpers';
+// import { formatBoxScoreForGemini } from '@/src/app/api/helpers';
 const geminiApiKey = process.env.GEMINI_API_KEY;
 const MODEL_NAME = "gemini-1.5-pro-latest";
 
@@ -74,7 +74,7 @@ export async function POST(req) {
       },
     },
   ]);
-  
+
   let text = await result.response.text()
   console.log('text: ', text);
   text = text.replace(/```json\n?/, "").replace(/\n```/, "").trim();
