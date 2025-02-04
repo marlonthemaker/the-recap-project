@@ -29,8 +29,9 @@ npm run dev
 `npm run build-service-worker`
 
 `firebase apphosting:secrets:set SECRETNAME`
-firebase apphosting:secrets:set GEMINI_API_KEY
+`firebase apphosting:secrets:grantaccess  GEMINI_API_KEY`
 
 `NODE_OPTIONS='--inspect' npm run dev`
 
 `chrome://inspect/#devices`
+
