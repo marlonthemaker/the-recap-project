@@ -1,20 +1,13 @@
 import { NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { getGameData } from '@/src/lib/preloaders';
 import 'server-only';
-// import { formatBoxScoreForGemini } from '@/src/app/api/helpers';
 const geminiApiKey = process.env.GEMINI_API_KEY;
 const MODEL_NAME = "gemini-1.5-pro-latest";
 
-
-
 export async function POST(req) {
   async function getGameBoxScore(gameId) {
-    const res = await fetch(`https://statsapi.mlb.com/api/v1/game/${gameId}/boxscore`);
-
-      if (!res.ok) {
-          throw new Error(`Failed to fetch game boxscore. Status: ${res.status}`);
-      }
-      return res.json();
+    return await getGameData(gameId)
   }
 
   const requestData = await req.json()

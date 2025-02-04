@@ -36,4 +36,13 @@ export const getSchedule = cache(async (id) => {
       console.error('Error processing data:', error);
   }
   return output.gameDigests[id];
+});
+
+export const getGameData = cache(async (id) => {
+  const res = await fetch(`https://statsapi.mlb.com/api/v1/game/${id}/boxscore`);
+
+  if (!res.ok) {
+      throw new Error(`Failed to fetch game boxscore. Status: ${res.status}`);
+  }
+  return res.json();
 })
