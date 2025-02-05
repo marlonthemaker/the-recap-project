@@ -35,3 +35,4 @@ npm run dev
 
 `chrome://inspect/#devices`
 
+`http://localhost:3000/en/recap/2024-04-02/admin`
