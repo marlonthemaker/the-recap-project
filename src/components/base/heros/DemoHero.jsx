@@ -3,13 +3,18 @@ import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/2
 
 const features = [
   {
-    name: 'Pick your teams.',
+    name: 'Pick your language.',
     description:
       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis tione.',
     icon: CloudArrowUpIcon,
   },
   {
-    name: 'Pick your language.',
+    name: 'Pick your teams.',
+    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+    icon: LockClosedIcon,
+  },
+  {
+    name: 'Pick your mode.',
     description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
     icon: LockClosedIcon,
   }
